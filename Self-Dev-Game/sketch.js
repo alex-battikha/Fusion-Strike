@@ -4,7 +4,7 @@ var player, playerImage;
 
 
 function preload() {
-  backgroundImage = loadImage("assets/images/background-image.jpeg");
+  backgroundImage = loadImage("assets/images/background.jpg");
 
   playerImage = loadImage("assets/images/player-shooting-left.png");
 }
@@ -28,3 +28,4 @@ function draw() {
 }
 
 //spawn enemies function
+//hearts
