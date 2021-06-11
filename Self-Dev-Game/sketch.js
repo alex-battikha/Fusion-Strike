@@ -12,19 +12,25 @@ var gameState;
 //class objects
 var player, game, form;
 
+//audio sounds
+var gunShotSound, coinCollectedSound, gameOverSound;
+
 
 function preload() {
   backgroundImage = loadImage("assets/images/background.jpg");
 
   playerImage = loadImage("assets/images/player-shooting-left.png");
+
+  gunShotSound = loadSound("assets/audio/gun-shot.wav");
+  coinCollectedSound = loadSound("assets/audio/coin-collected.wav");
+  gameOverSound = loadSound("assets/audio/game-over.wav");
+
 }
-
-
 
 function setup() {
   canvas = createCanvas(displayWidth, displayHeight);
   
-  game = new Game();
+  //game = new Game();
 
   player = createSprite(displayWidth/2, displayHeight/2, 10, 10);
   player.addImage(playerImage);
@@ -37,6 +43,15 @@ function draw() {
   player.addImage(playerImage);
 
   drawSprites();
+}
+
+
+
+//TESTING USAGE ONLY!
+function keyPressed() {
+  //gunShotSound.play();
+  //coinCollectedSound.play();
+  //gameOverSound.play();
 }
 
 //spawn enemies function
