@@ -1,13 +1,41 @@
-<!DOCTYPE html><html>
+<!DOCTYPE html>
+<html>
   <head>
+    <title>Fusion Strike</title>
+    <!--CSS File Requirements-->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8">
     <!--Essential Libraries-->
     <script src="libraries/p5.js"></script>
     <script src="libraries/p5.dom.min.js"></script>
     <script src="libraries/p5.sound.min.js"></script>
     <script src="libraries/p5.play.js"></script>
     <script src="libraries/matter.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <meta charset="utf-8">
+
+    <!--Adding Classes-->
+    <script src="js/form.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/player.js"></script>
+
+    <!--Firebase DB Set-up-->
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-analytics.js"></script>
+
+    <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyAchaGmLw2m1rkWLaCuKI82kE526tNoYa4",
+        authDomain: "self-dev-game.firebaseapp.com",
+        projectId: "self-dev-game",
+        storageBucket: "self-dev-game.appspot.com",
+        messagingSenderId: "196989529155",
+        appId: "1:196989529155:web:cf5e9630581baf235838f6",
+        measurementId: "G-B6ZR18HXEN"
+      };
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+
   </head>
 
   <body>

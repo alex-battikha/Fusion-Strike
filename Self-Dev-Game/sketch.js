@@ -9,17 +9,25 @@ var player, playerImage;
 
 var gameState;
 
+var database;
+
 //class objects
 var player, game, form;
 
+//fonts
+var csFont;
+
 //audio sounds
 var gunShotSound, coinCollectedSound, gameOverSound;
+
 
 
 function preload() {
   backgroundImage = loadImage("assets/images/background.jpg");
 
   playerImage = loadImage("assets/images/player-shooting-left.png");
+
+  csFont = loadFont("assets/fonts/cs_regular.ttf");
 
   gunShotSound = loadSound("assets/audio/gun-shot.wav");
   coinCollectedSound = loadSound("assets/audio/coin-collected.wav");
@@ -29,6 +37,8 @@ function preload() {
 
 function setup() {
   canvas = createCanvas(displayWidth, displayHeight);
+
+  database = firebase.database();
   
   //game = new Game();
 
@@ -47,7 +57,7 @@ function draw() {
 
 
 
-//TESTING USAGE ONLY!
+//TESTING SOUND!
 function keyPressed() {
   //gunShotSound.play();
   //coinCollectedSound.play();
