@@ -7,7 +7,8 @@ var backgroundImage;
 
 var player, playerImage;
 
-var gameState;
+var gameState = 0;
+//var playerCount = 0;
 
 var database;
 
@@ -50,8 +51,22 @@ function setup() {
 function draw() {
   background(backgroundImage);
 
+  //TODO: integrate line below with player.js
   player.addImage(playerImage);
 
+  //if-statements to initalize the beginning of the game
+  if(playerCount === 1) {
+    game.update(1);
+  }
+  if(gameState === 1) {
+    //look into function below
+    clear();
+    game.play();
+  }
+  if(gameState === 2) {
+    game.end();
+  }
+  
   drawSprites();
 }
 
@@ -64,5 +79,7 @@ function keyPressed() {
   //gameOverSound.play();
 }
 
+//Extras!
 //spawn enemies function
 //hearts
+//leaderboard
