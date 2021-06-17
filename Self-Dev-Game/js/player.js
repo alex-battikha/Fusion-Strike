@@ -13,4 +13,11 @@ class Player {
             playerCount: count
         });
     }
+
+    updatePlayerPosition(positionX, positionY) {
+        database.ref('playerPosition').update({
+            playerPositionX: positionX,
+            playerPositionY: positionY
+        });
+    }
 }

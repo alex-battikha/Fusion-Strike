@@ -41,18 +41,13 @@ function setup() {
 
   database = firebase.database();
   
-  //game = new Game();
-
-  player = createSprite(displayWidth/2, displayHeight/2, 10, 10);
-  player.addImage(playerImage);
-  player.scale = 0.4;
+  game = new Game();
+  game.getState();
+  game.start();
 }
 
 function draw() {
   background(backgroundImage);
-
-  //TODO: integrate line below with player.js
-  player.addImage(playerImage);
 
   //if-statements to initalize the beginning of the game
   if(playerCount === 1) {
@@ -73,13 +68,16 @@ function draw() {
 
 
 //TESTING SOUND!
-function keyPressed() {
+//function keyPressed() {
   //gunShotSound.play();
   //coinCollectedSound.play();
   //gameOverSound.play();
-}
+//}
 
 //Extras!
 //spawn enemies function
 //hearts
 //leaderboard
+
+
+//Next Day's Work, continue working on displaying form.js

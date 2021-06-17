@@ -1,5 +1,7 @@
 class Form {
     constructor () {
+        textFont(csFont);
+
         this.title = createElement('h1');
         this.input = createInput('Name');
         this.button1P = createButton('1 Player');
@@ -17,13 +19,12 @@ class Form {
 
     display() {
         this.title.html("Fusion Strike");
-        this.title.fontFamily(csFont);
         this.title.position(displayWidth/2-25, 20);
 
         this.input.position(displayWidth/2, displayHeight/2);
         this.button1P.position(displayWidth/2-200, displayHeight/2 + 150);
         //this.button2P.position(displayWidth/2+200, displayHeight/2 + 150)
-        this.reset.position(dispalyWidth-100, displayHeight);
+        this.reset.position(displayWidth-100, displayHeight);
 
         this.button1P.mousePressed(()=>{
             this.input.hide();
