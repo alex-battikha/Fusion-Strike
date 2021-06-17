@@ -8,7 +8,7 @@ var backgroundImage;
 var player, playerImage;
 
 var gameState = 0;
-//var playerCount = 0;
+var playerCount = 0;
 
 var database;
 

@@ -17,6 +17,7 @@ class Form {
 
     display() {
         this.title.html("Fusion Strike");
+        this.title.fontFamily(csFont);
         this.title.position(displayWidth/2-25, 20);
 
         this.input.position(displayWidth/2, displayHeight/2);
@@ -27,7 +28,7 @@ class Form {
         this.button1P.mousePressed(()=>{
             this.input.hide();
             this.button1P.hide();
-            this.button2P.hide();
+            //this.button2P.hide();
         });
 
         // this.button2P.mousePressed(()=>{
