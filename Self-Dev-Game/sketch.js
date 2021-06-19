@@ -19,7 +19,7 @@ var player, game, form;
 var csFont;
 
 //audio sounds
-var gunShotSound, coinCollectedSound, gameOverSound;
+var gunShotSound, coinCollectedSound, gameOverSound, backgroundAudio;
 
 
 
@@ -33,11 +33,13 @@ function preload() {
   gunShotSound = loadSound("assets/audio/gun-shot.wav");
   coinCollectedSound = loadSound("assets/audio/coin-collected.wav");
   gameOverSound = loadSound("assets/audio/game-over.wav");
+  backgroundAudio = createSound("assets/audio/background-audio.mp3");
 
 }
 
 function setup() {
-  canvas = createCanvas(displayWidth, displayHeight);
+  canvas = createCanvas(displayWidth-1, displayHeight-136);
+  console.log(backgroundImage.width);
 
   database = firebase.database();
   
@@ -72,6 +74,7 @@ function draw() {
   //gunShotSound.play();
   //coinCollectedSound.play();
   //gameOverSound.play();
+  //backgroundAudio.play();
 //}
 
 //Extras!
@@ -80,4 +83,4 @@ function draw() {
 //leaderboard
 
 
-//Next Day's Work, continue working on displaying form.js
+//Left Off At: Playing Background Audio in Form Screen

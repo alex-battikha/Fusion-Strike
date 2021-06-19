@@ -5,7 +5,7 @@ class Form {
         this.title = createElement('h1');
         this.input = createInput('Name');
         this.button1P = createButton('1 Player');
-        //this.button2P = createButton('2 Player');
+        this.button2P = createButton('2 Player');
 
         this.reset = createButton('Reset');
     }
@@ -14,22 +14,30 @@ class Form {
         this.title.hide();
         this.input.hide();
         this.button1P.hide();
-        //this.button2P.hide();
+        this.button2P.hide();
     }
 
     display() {
         this.title.html("Fusion Strike");
-        this.title.position(displayWidth/2-25, 20);
+        this.title.position(displayWidth/2-50, 20);
 
-        this.input.position(displayWidth/2, displayHeight/2);
-        this.button1P.position(displayWidth/2-200, displayHeight/2 + 150);
-        //this.button2P.position(displayWidth/2+200, displayHeight/2 + 150)
-        this.reset.position(displayWidth-100, displayHeight);
+        this.input.position(displayWidth/2-55, displayHeight/2-150);
+        this.input.size(200);
+
+        this.button1P.position(displayWidth/2-40, displayHeight/2-75);
+        this.button2P.position(displayWidth/2+65, displayHeight/2-75);
+
+        this.reset.position(width-85, height-35);
+        this.reset.size(60);
+
+        //backgroundAudio.play();
 
         this.button1P.mousePressed(()=>{
             this.input.hide();
             this.button1P.hide();
-            //this.button2P.hide();
+            this.button2P.hide();
+
+            //backgroundAudio.pause();
         });
 
         // this.button2P.mousePressed(()=>{
