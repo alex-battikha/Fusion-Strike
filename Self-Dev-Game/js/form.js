@@ -30,14 +30,14 @@ class Form {
         this.reset.position(width-85, height-35);
         this.reset.size(60);
 
-        //backgroundAudio.play();
+        backgroundAudio.play();
 
         this.button1P.mousePressed(()=>{
             this.input.hide();
             this.button1P.hide();
             this.button2P.hide();
 
-            //backgroundAudio.pause();
+            backgroundAudio.pause();
         });
 
         // this.button2P.mousePressed(()=>{

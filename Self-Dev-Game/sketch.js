@@ -33,7 +33,7 @@ function preload() {
   gunShotSound = loadSound("assets/audio/gun-shot.wav");
   coinCollectedSound = loadSound("assets/audio/coin-collected.wav");
   gameOverSound = loadSound("assets/audio/game-over.wav");
-  backgroundAudio = createSound("assets/audio/background-audio.mp3");
+  backgroundAudio = loadSound("assets/audio/background-audio.mp3");
 
 }
 
@@ -56,7 +56,7 @@ function draw() {
     game.update(1);
   }
   if(gameState === 1) {
-    //look into function below
+    //look into clear() function below
     clear();
     game.play();
   }
