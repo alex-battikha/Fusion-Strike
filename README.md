@@ -5,4 +5,4 @@ Developer: Alex Battikha
 
 @ Copyright: 2021 Alex Battikha
 
-Check out Development @ https://alex-battikha.github.io/Self-Developed-Game/
+Check out Development @ https://alex-battikha.github.io/Self-Developed-Game/Self-Dev-Game/
