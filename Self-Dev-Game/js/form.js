@@ -38,6 +38,9 @@ class Form {
             this.button2P.hide();
 
             backgroundAudio.pause();
+
+            gameState = 1;
+            game.update(1);
         });
 
         // this.button2P.mousePressed(()=>{
