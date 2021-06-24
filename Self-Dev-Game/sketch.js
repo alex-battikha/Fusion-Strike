@@ -13,7 +13,7 @@ var playerCount = 0;
 var database;
 
 //class objects
-var player, game, form;
+var playerObject, gameObject, formObject;
 
 //fonts
 var csFont;
@@ -38,30 +38,32 @@ function preload() {
 }
 
 function setup() {
-  canvas = createCanvas(displayWidth-1, displayHeight-136);
-  console.log(backgroundImage.width);
+  canvas = createCanvas(displayWidth, displayHeight);
+  //console.log(backgroundImage.width);
 
   database = firebase.database();
   
-  game = new Game();
-  game.getState();
-  game.start();
+  gameObject = new Game();
+  gameObject.getState();
+  gameObject.start();
 }
 
 function draw() {
   background(backgroundImage);
 
+  //console.log(gameState);
+
   //if-statements to initalize the beginning of the game
   if(playerCount === 1) {
-    game.update(1);
+    gameObject.update(1);
   }
   if(gameState === 1) {
     //look into clear() function below
     clear();
-    game.play();
+    gameObject.play();
   }
   if(gameState === 2) {
-    game.end();
+    gameObject.end();
   }
   
   drawSprites();
@@ -83,4 +85,4 @@ function draw() {
 //leaderboard
 
 
-//Left Off At: Game Controls
+//Left Off At: Reset Not Showing, Github Icon, Figuring HTML Out & Player Creation

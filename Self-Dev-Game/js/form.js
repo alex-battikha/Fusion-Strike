@@ -40,7 +40,12 @@ class Form {
             backgroundAudio.pause();
 
             gameState = 1;
-            game.update(1);
+            gameObject.update(1);
+        });
+
+        this.reset.mousePressed(()=>{
+            gameObject.update(0);
+            //player.updatePlayerCount(0);
         });
 
         // this.button2P.mousePressed(()=>{
