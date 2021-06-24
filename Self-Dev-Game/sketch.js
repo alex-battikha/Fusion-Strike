@@ -21,7 +21,7 @@ var csFont;
 //audio sounds
 var gunShotSound, coinCollectedSound, gameOverSound, backgroundAudio;
 
-
+var githubIcon, githubIconImage;
 
 function preload() {
   backgroundImage = loadImage("assets/images/background.jpg");
@@ -35,6 +35,8 @@ function preload() {
   gameOverSound = loadSound("assets/audio/game-over.wav");
   backgroundAudio = loadSound("assets/audio/background-audio.mp3");
 
+  githubIconImage = loadImage("assets/images/github-transparent.png");
+
 }
 
 function setup() {
@@ -46,10 +48,20 @@ function setup() {
   gameObject = new Game();
   gameObject.getState();
   gameObject.start();
+
+  githubIcon = createSprite(40, 45, 20, 20);
+  githubIcon.scale = 0.15;
+  githubIcon.addImage(githubIconImage);
 }
 
 function draw() {
   background(backgroundImage);
+
+  //check if the player's mouse is hovering over githubIcon
+  if(mousePressedOver(githubIcon)) {
+    console.log("button pressed");
+    window.open("https://github.com/alex-battikha");
+  }
 
   //console.log(gameState);
 
@@ -85,4 +97,4 @@ function draw() {
 //leaderboard
 
 
-//Left Off At: Reset Not Showing, Github Icon, Figuring HTML Out & Player Creation
+//Left Off At: Player Creation

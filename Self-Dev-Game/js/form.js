@@ -27,7 +27,7 @@ class Form {
         this.button1P.position(displayWidth/2-40, displayHeight/2-75);
         this.button2P.position(displayWidth/2+65, displayHeight/2-75);
 
-        this.reset.position(width-85, height-290);
+        this.reset.position(width-80, height-280);
         this.reset.size(60);
 
         backgroundAudio.play();
