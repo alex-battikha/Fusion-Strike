@@ -15,33 +15,34 @@ class Game {
     }
 
 
-    start() {
+    async start() {
         //TODO: fill in code for this function
         if(gameState === 0) {
             playerObject = new Player();
+
+            formObject = new Form();
+            formObject.display();
         }
-        
-        formObject = new Form();
-        formObject.display();
 
         //Initialization of Player
-        player = createSprite(displayWidth/2, displayHeight/2, 10, 10);
-        player.addImage(playerImage);
-        player.scale = 0.4;
+        player1 = createSprite(displayWidth/2, displayHeight/2);
+        player1.addImage(player1Image);
+        player1.scale = 0.4;
     }
 
 
     play() {
         //TODO: fill in code for this function
+        image(backgroundImage, 0, 0, displayWidth, displayHeight);
 
         if(keyIsDown(LEFT_ARROW)) {
-            player.x -= 5;
+            player1.x -= 5;
         }
         if(keyDown(RIGHT_ARROW)) {
-            player.x += 5;
+            player1.x += 5;
         }
         if(keyDown(UP_ARROW)) {
-            player.y -= 5;
+            player1.y -= 5;
         }
     }
 
