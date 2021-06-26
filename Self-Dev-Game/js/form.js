@@ -41,11 +41,22 @@ class Form {
 
             gameState = 1;
             gameObject.update(1);
+
+            player2Game = false;
         });
 
         this.reset.mousePressed(()=>{
-            gameObject.update(0);
+            this.input.hide();
+            this.button1P.hide();
+            this.button2P.hide();
+
+            backgroundAudio.pause();
+
+            gameState = 1;
+            gameObject.update(1);
             //player.updatePlayerCount(0);
+
+            player2Game = true;
         });
 
         // this.button2P.mousePressed(()=>{

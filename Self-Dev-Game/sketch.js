@@ -9,6 +9,8 @@ var backgroundImage;
 var player1, player1Image;
 var player2, player2Image;
 
+var player2Game;
+
 //ground
 var grassBlock, grassBigBlock;
 var grassBlockImage, grassBigBlockImage;
@@ -28,6 +30,8 @@ var csFont;
 var gunShotSound, coinCollectedSound, gameOverSound, backgroundAudio;
 
 var githubIcon, githubIconImage;
+
+var githubLogoGroup;
 
 function preload() {
   backgroundImage = loadImage("assets/images/background.jpg");
@@ -66,9 +70,14 @@ function setup() {
   grassBigBlock = createSprite();
   grassBigBlock.addImage(grassBigBlockImage);
 
-  githubIcon = createSprite(40, 45, 20, 20);
+  player2Game = false;
+
+  githubIcon = createSprite(40, 45);
   githubIcon.scale = 0.15;
   githubIcon.addImage(githubIconImage);
+
+  githubLogoGroup = createGroup();
+  githubLogoGroup.add(githubIcon);
 }
 
 function draw() {
@@ -88,14 +97,13 @@ function draw() {
   }
   if(gameState === 1) {
     //look into clear() function below
-    clear();
+    //clear();
     gameObject.play();
   }
   if(gameState === 2) {
     gameObject.end();
   }
-  
-  drawSprites();
+  drawSprites(githubLogoGroup);
 }
 
 
@@ -114,4 +122,4 @@ function draw() {
 //leaderboard
 
 
-//Left Off At: Player Creation
+//Left Off At: Setting up Game Field
