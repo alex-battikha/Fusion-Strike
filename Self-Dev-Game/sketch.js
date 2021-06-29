@@ -85,14 +85,14 @@ function draw() {
 
   //check if the player's mouse is hovering over githubIcon
   if(mousePressedOver(githubIcon)) {
-    console.log("button pressed");
     window.open("https://github.com/alex-battikha");
   }
 
   //console.log(gameState);
 
   //if-statements to initalize the beginning of the game
-  if(playerCount === 1) {
+  if(playerCount === 2) {
+    gameState = 1;
     gameObject.update(1);
   }
   if(gameState === 1) {
@@ -105,7 +105,6 @@ function draw() {
   }
   drawSprites(githubLogoGroup);
 }
-
 
 
 //TESTING SOUND!
@@ -122,4 +121,7 @@ function draw() {
 //leaderboard
 
 
-//Left Off At: Setting up Game Field
+//Left Off At: 
+// 1) Fixing Player DB Issue
+// 2) Adding Welcome Tag
+// 3) Switching out Play Button for Sprite 

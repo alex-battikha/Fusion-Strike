@@ -14,8 +14,7 @@ class Game {
         });
     }
 
-
-    start() {
+    async start() {
         //TODO: fill in code for this function
         if(gameState === 0) {
             playerObject = new Player();

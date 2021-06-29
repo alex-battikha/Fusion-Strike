@@ -1,5 +1,9 @@
 class Player {
-    constructor() {}
+    constructor() {
+        this.name = null;
+        this.index = null;
+        this.zombiesDestroyed = 0;
+    }
 
     getPlayerCount() {
         var playerCountRef = database.ref("playerCount");
@@ -13,6 +17,14 @@ class Player {
             playerCount: count
         });
     }
+
+    update(){
+        var playerIndex = "players/player" + this.index;
+        database.ref(playerIndex).set({
+          name: this.name,
+          zombiesDestroyed: this.zombiesDestroyed
+        });
+      }
 
     updatePlayerPosition(positionX, positionY) {
         database.ref('playerPosition').update({
