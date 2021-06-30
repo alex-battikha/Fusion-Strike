@@ -94,6 +94,13 @@ function draw() {
   //console.log(gameState);
 
   //if-statements to initalize the beginning of the game
+  if(gameState === 0) {
+    textFont(csFont);
+    textSize(90);
+    fill("black");
+    text("Fusion Strike", displayWidth/2-250, 80);
+  }
+  
   if(playerCount === 2) {
     gameState = 1;
     gameObject.update(1);
@@ -106,6 +113,7 @@ function draw() {
   if(gameState === 2) {
     gameObject.end();
   }
+
   drawSprites(githubLogoGroup);
 }
 
@@ -125,6 +133,6 @@ function draw() {
 
 
 //Left Off At: 
-// 1) Fixing Player DB Issue
-// 2) Adding Welcome Tag
-// 3) Switching out Play Button for Sprite 
+// 1) Switching out Play Button for Sprite 
+// 2) Spawning Zombies
+// 3) Spawning in Blocks

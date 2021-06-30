@@ -19,18 +19,18 @@ class Player {
         });
     }
 
+    updatePlayerPosition(positionX, positionY) {
+        database.ref('playerPosition').update({
+            playerPositionX: positionX,
+            playerPositionY: positionY
+        });
+    }
+
     update(){
         var playerIndex = "players/player" + this.index;
         database.ref(playerIndex).set({
           name: this.name,
           zombiesDestroyed: this.zombiesDestroyed
-        });
-      }
-
-    updatePlayerPosition(positionX, positionY) {
-        database.ref('playerPosition').update({
-            playerPositionX: positionX,
-            playerPositionY: positionY
         });
     }
 }

@@ -20,8 +20,8 @@ class Form {
     }
 
     display() {
-        this.title.html("Fusion Strike");
-        this.title.position(displayWidth/2-50, 20);
+        //this.title.html("Fusion Strike");
+        //this.title.position(displayWidth/2-50, 20);
 
         this.input.position(displayWidth/2-55, displayHeight/2-150);
         this.input.size(200);
@@ -37,7 +37,8 @@ class Form {
         backgroundAudio.play();
 
         this.button.mousePressed(()=>{
-            this.name = this.input.value(); 
+            this.name = this.input.value();
+            playerObject.name = this.input.value(); 
 
             playerObject.getPlayerCount();
             playerCount += 1;
