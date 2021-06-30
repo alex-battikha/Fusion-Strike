@@ -1,13 +1,12 @@
 class Form {
     constructor () {
-        textFont('Helvetica');
-
         this.name = null;
         this.title = createElement('h1');
         this.input = createInput('Name');
         this.button = createButton("Play!");
         // this.button1P = createButton('1 Player');
         // this.button2P = createButton('2 Player');
+        this.welcomeTag = createElement('h2');
 
         this.reset = createButton('Reset');
     }
@@ -15,6 +14,7 @@ class Form {
     hide() {
         this.title.hide();
         this.input.hide();
+        this.welcomeTag.hide();
         //this.button1P.hide();
         //this.button2P.hide();
     }
@@ -36,30 +36,19 @@ class Form {
 
         backgroundAudio.play();
 
-        // this.button1P.mousePressed(()=>{
-        //     this.input.hide();
-        //     this.button1P.hide();
-        //     this.button2P.hide();
-
-        //     backgroundAudio.pause();
-
-        //     gameState = 1;
-        //     gameObject.update(1);
-
-        //     player2Game = false;
-        // });
-
         this.button.mousePressed(()=>{
             this.name = this.input.value(); 
-            console.log(this.name);
-            playerObject.getPlayerCount();
-            console.log(playerCount);
-            playerCount += 1;
-            playerObject.index = playerCount;
 
+            playerObject.getPlayerCount();
+            playerCount += 1;
             playerObject.updatePlayerCount(playerCount);
 
+            playerObject.index = playerCount;
+
             playerObject.update();
+
+            this.welcomeTag.html("Hello" + this.input.value());
+            this.welcomeTag.position(displayWidth/2-15, displayHeight/2-300);
             
             this.input.hide();
 
@@ -80,12 +69,23 @@ class Form {
             player2Game = true;
         });
 
-        // this.button2P.mousePressed(()=>{
+        // this.button1P.mousePressed(()=>{
         //     this.input.hide();
         //     this.button1P.hide();
         //     this.button2P.hide();
 
-        //     //TODO: finish creating 2 player functionality
+        //     backgroundAudio.pause();
+
+        //     gameState = 1;
+        //     gameObject.update(1);
+
+        //     player2Game = false;
+        // });
+
+        // this.button2P.mousePressed(()=>{
+        //     this.input.hide();
+        //     this.button1P.hide();
+        //     this.button2P.hide();
         // });
     }
 }

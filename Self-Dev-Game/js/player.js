@@ -5,9 +5,10 @@ class Player {
         this.zombiesDestroyed = 0;
     }
 
+    //Issue Resolved: calling below method in draw loop to continously retrieve playerCount value
     getPlayerCount() {
         var playerCountRef = database.ref("playerCount");
-        playerCountRef.on("value", function(data) {
+        playerCountRef.on("value", (data)=> {
             playerCount = data.val();
         });
     }

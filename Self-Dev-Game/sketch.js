@@ -88,6 +88,9 @@ function draw() {
     window.open("https://github.com/alex-battikha");
   }
 
+  playerObject.getPlayerCount();  
+  //console.log(playerCount);
+
   //console.log(gameState);
 
   //if-statements to initalize the beginning of the game
