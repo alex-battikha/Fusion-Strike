@@ -28,6 +28,10 @@ class Game {
         player1.addImage(player1Image);
         player1.scale = 0.4;
 
+        player1.visible = true;
+        grassBlock.visible = true;
+        grassBigBlock.visible = true;
+
         if(player2Game) {
             player2 = createSprite(displayWidth/2 + 200, displayHeight/2);
             player2.addImage(payer2Image);
@@ -37,7 +41,6 @@ class Game {
 
 
     play() {
-        //TODO: fill in code for this function
         image(backgroundImage, 0, 0, displayWidth, displayHeight);
         drawSprites();
         
@@ -49,6 +52,10 @@ class Game {
         }
         if(keyDown(UP_ARROW)) {
             player1.y -= 5;
+        }
+
+        function spawnEnemies() {
+
         }
     }
 

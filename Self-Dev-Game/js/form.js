@@ -8,7 +8,11 @@ class Form {
         // this.button2P = createButton('2 Player');
         this.welcomeTag = createElement('h2');
 
-        this.reset = createButton('Reset');
+        this.playAgain = createButton('Play Again');
+    }
+
+    preload() {
+        playButtonImage = loadImage("assets/images/play-button.png");
     }
 
     hide() {
@@ -29,10 +33,11 @@ class Form {
         //this.button1P.position(displayWidth/2-40, displayHeight/2-75);
         //this.button2P.position(displayWidth/2+65, displayHeight/2-75);
 
-        this.button.position(displayWidth/2+20, displayHeight/2-75);
+        this.button.position(displayWidth/2, displayHeight/2-75);
+        this.button.size(90);
 
-        this.reset.position(width-80, height-280);
-        this.reset.size(60);
+        this.playAgain.position(width-105, height-200);
+        this.playAgain.size(80);
 
         backgroundAudio.play();
 
@@ -56,7 +61,7 @@ class Form {
             backgroundAudio.pause();
         });
 
-        this.reset.mousePressed(()=>{
+        this.playAgain.mousePressed(()=>{
             this.input.hide();
             //this.button1P.hide();
             //this.button2P.hide();

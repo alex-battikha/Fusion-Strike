@@ -2,7 +2,7 @@ class Player {
     constructor() {
         this.name = null;
         this.index = null;
-        this.zombiesDestroyed = 0;
+        this.enemiesDestroyed = 0;
     }
 
     //Issue Resolved: calling below method in draw loop to continously retrieve playerCount value
@@ -30,7 +30,7 @@ class Player {
         var playerIndex = "players/player" + this.index;
         database.ref(playerIndex).set({
           name: this.name,
-          zombiesDestroyed: this.zombiesDestroyed
+          enemiesDestroyed: this.enemiesDestroyed
         });
     }
 }
