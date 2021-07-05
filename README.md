@@ -1,4 +1,4 @@
-# Self-Developed Game
+# Fusion Strike
 Self Developed game for Silicon Valley Competition
 
 Developer: Alex Battikha
