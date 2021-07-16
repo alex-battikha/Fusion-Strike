@@ -6,13 +6,17 @@
 var backgroundImage;
 
 //players
-var player1, player1Image;
-var player2, player2Image;
+var player1, player1LeftImage, player2RightImage;
+var player2, player2RunningLeftImage, player2RunningRightImage;
+var player2KickingLeftImage, player2KickingRightImage;
 
 var player2Game;
 
 //game elements
-var spikeEnemyLeft, spikeEnemyRight;
+var spikeEnemy;
+var spikeEnemyLeftImage, spikeEnemyRightImage;
+var enemyGroup;
+var enemiesSpawned; //used to keep track of enemy count and spawn them in rounds
 
 //ground
 var grassBlock, grassBigBlock;
@@ -40,9 +44,13 @@ var gunShotSound, coinCollectedSound, gameOverSound, backgroundAudio;
 function preload() {
   backgroundImage = loadImage("assets/images/background.jpg");
 
-  player1Image = loadImage("assets/images/player-shooting-left.png");
-  //TODO: find an image for p2
-  //player2Image = loadImage();
+  player1LefItmage = loadImage("assets/images/player-shooting-left.png");
+  player1RightImage = loadImage("assets/images/player-shooting-right.png");
+
+  player2RunningRight = loadImage("assets/images/player2-running-right.png");
+  //player2RunningLeft = loadImage();
+  player2KickingRightImage = loadImage("assets/images/player2-kicking-right.png");
+  //player2KickingLeftImage = loadImage();
 
   spikeEnemyLeft = loadImage("assets/images/spike-enemy-left.png");
   spikeEnemyRight = loadImage("assets/images/spike-enemy-right.png");
@@ -83,6 +91,10 @@ function setup() {
   playButton = createSprite(displayWidth/2+45, displayHeight/2-62);
   playButton.addImage(playButtonImage);
   playButton.scale = 0.03;
+
+  spikeEnemy = createSprite();
+
+  enemyGroup = createGroup();
 
   githubIcon = createSprite(40, 45);
   githubIcon.scale = 0.15;
@@ -150,9 +162,8 @@ function draw() {
 
 
 //Left Off At: 
-// 1) Re-sizing Play Button Image
-// 2) Spawning Zombies
-// 3) Spawning in Blocks
+// 1) Spawning Zombies
+// 2) Spawning in Blocks
 
 //Extra Issues:
-// 1) gameBlock.visible exception
+// 1) grassBlock.visible exception

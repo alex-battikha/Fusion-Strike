@@ -55,7 +55,20 @@ class Game {
         }
 
         function spawnEnemies() {
+            if(gameState==1) {
+                for(var i = 0; i < 6; i++)
+                if(frameCount % 100 === 0) {
+                    var randomNumber = Math.random(1, 2);
 
+                    switch(randomNumber) {
+                        case 1: spikeEnemy.addImage(spikeEnemyLeft);
+                        break;
+                        
+                        case 2: spikeEnemy.addImage(spikeEnemyRight);
+                        break;
+                    }
+                }
+            }
         }
     }
 
