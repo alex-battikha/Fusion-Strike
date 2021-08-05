@@ -33,6 +33,7 @@ class Form {
         //this.button1P.position(displayWidth/2-40, displayHeight/2-75);
         //this.button2P.position(displayWidth/2+65, displayHeight/2-75);
 
+        //playButton.overlap(this.button);
         this.button.position(displayWidth/2, displayHeight/2-75);
         this.button.size(90);
 
@@ -53,7 +54,7 @@ class Form {
 
             playerObject.update();
 
-            this.welcomeTag.html("Hello" + this.input.value());
+            this.welcomeTag.html("Hello " + this.input.value());
             this.welcomeTag.position(displayWidth/2-15, displayHeight/2-300);
             
             this.input.hide();
@@ -62,36 +63,17 @@ class Form {
         });
 
         this.playAgain.mousePressed(()=>{
-            this.input.hide();
-            //this.button1P.hide();
-            //this.button2P.hide();
-
-            backgroundAudio.pause();
-
-            gameState = 1;
-            gameObject.update(1);
-            //player.updatePlayerCount(0);
-
-            player2Game = true;
+            //console.log("isPressed");
+            
+            playerObject.getPlayerCount();
+            if(playerCount != 0) {
+                playerObject.updatePlayerCount(0);
+            }
+            
+            gameObject.getState();
+            if(gameState != 0) {
+                gameObject.update(0);
+            }
         });
-
-        // this.button1P.mousePressed(()=>{
-        //     this.input.hide();
-        //     this.button1P.hide();
-        //     this.button2P.hide();
-
-        //     backgroundAudio.pause();
-
-        //     gameState = 1;
-        //     gameObject.update(1);
-
-        //     player2Game = false;
-        // });
-
-        // this.button2P.mousePressed(()=>{
-        //     this.input.hide();
-        //     this.button1P.hide();
-        //     this.button2P.hide();
-        // });
     }
 }

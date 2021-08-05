@@ -25,18 +25,23 @@ class Game {
 
         //Initialization of Player
         player1 = createSprite(displayWidth/2, displayHeight/2);
-        player1.addImage(player1Image);
+        player1.addImage(player1LeftImage);
         player1.scale = 0.4;
 
+        player2 = createSprite(displayWidth/2 + 200, displayHeight/2);
+        player2.addImage(player2RunningRightImage);
+        player2.scale = 0.4;
+
+        grassBlock = createSprite(10, 10, 10, 10);
+        grassBlock.addImage(grassBlockImage);
+
+        grassBigBlock = createSprite(10, 10, 10, 10);
+        grassBigBlock.addImage(grassBigBlockImage);
+
         player1.visible = true;
+        player2.visible = true;
         grassBlock.visible = true;
         grassBigBlock.visible = true;
-
-        if(player2Game) {
-            player2 = createSprite(displayWidth/2 + 200, displayHeight/2);
-            player2.addImage(payer2Image);
-            player2.scale = 0.4;
-        }
     }
 
 
